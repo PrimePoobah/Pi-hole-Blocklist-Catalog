@@ -1,171 +1,184 @@
-# 🛡️ Pi-hole Blocklist Catalog  
-<sub><code>material-icons: security</code> • Curated, Pi-hole v6+ compatible blocklists</sub>
+# 🛡️ Pi-hole Blocklist Catalog
 
-This catalog aggregates **actively maintained**, **Pi-hole-compatible** blocklists from reputable sources.  
-All URLs are:
+Curated, **Pi-hole v6+ compatible** blocklists from reputable, actively maintained sources.
 
-- 🌐 Served over **HTTPS**
-- ✅ In **hosts** or **domain-only / Adblock**-compatible formats
-- 🧪 Suitable for **Pi-hole v6+**
+All lists included are:
+
+- 🌐 Served via **HTTPS**  
+- 🧱 Hosts / Domain / Adblock compatible  
+- 🔄 Actively maintained (≤12–18 months)  
+- 🧪 Reasonably safe for Pi-hole v6+ (but always test in your own environment)
 
 ---
 
-## 🔎 Quick Navigation  
-<sub><code>material-icons: travel_explore</code></sub>
+## 🔎 Quick Navigation
 
 - [Legend](#-legend)
+- [Recommended Baseline Lists](#-recommended-baseline-lists)
 - [Ads](#-ads)
 - [Adult](#-adult)
 - [Crypto](#-crypto)
 - [Malware](#-malware)
-- [Mixed (combo lists)](#-mixed)
+- [Mixed](#-mixed)
 - [Phishing](#-phishing)
-- [Suspicious / Threat-Intel](#-suspicious)
+- [Suspicious / Threat-Intel](#-suspicious--threat-intel)
 - [Telemetry](#-telemetry)
 - [Implementation Notes](#-implementation-notes)
 
 ---
 
-## 🧾 Legend  
-<sub><code>material-icons: menu_book</code></sub>
+## 🧾 Legend
 
-- **Reputation (1–10)**  
-  - 10 – Long-lived, widely trusted, very actively maintained, low false-positive history  
-  - 8–9 – Strong, well-maintained, popular in the community  
-  - 6–7 – Good quality but either newer, niche, or more aggressive (higher FP risk)
+**Reputation Score (1–10)**  
+- **10** – Long-standing, trusted, extremely stable, low false-positives  
+- **8–9** – Strong, well-maintained, widely used  
+- **6–7** – Good but more aggressive or specialized  
 
-- **Approx. Entries**  
-  - Rough domain/host counts where published by the project or widely referenced  
-  - “—” means the project doesn’t clearly publish a count
+**Approx. Entries**  
+- Based on published or commonly referenced domain totals  
+- `—` = not published  
 
-- **Category values** (always sorted alphabetically):
-  - `ads`, `adult`, `crypto`, `malware`, `phishing`, `suspicious`, `telemetry`, `tracking`, plus combinations.
-
----
-
-## 📢 Ads  
-<sub><code>material-icons: campaign</code></sub>
-
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| RPiList EasyList Extended | `https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/easylist` | ads, tracking | DNS-converted EasyList variant focused on advertising and tracking domains. | RPiList / SemperVideo | Active (2025) | 8/10 | — | Solid ad/tracking layer; moderate size. Test alongside other large lists to avoid over-blocking. |
+**Categories**  
+Alphabetical, comma-separated (e.g., `ads, malware, tracking`)  
 
 ---
 
-## 🔞 Adult  
-<sub><code>material-icons: explicit</code></sub>
+# ⭐ Recommended Baseline Lists  
+*(Choose ONE as your main “daily driver” list)*
 
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| OISD NSFW | `https://nsfw.oisd.nl` | adult, ads, tracking | Domain list focused on porn/shock/adult sites; NSFW superset of OISD Small. | OISD (sjhgvr) | Active (2025) | 9/10 | — | Strong adult/NSFW block; may block adult-adjacent but legitimate sites. Use only where adult blocking is explicitly required. |
+These lists offer the best balance of reliability, low breakage, maintenance quality, and broad protection.
 
----
-
-## 🪙 Crypto  
-<sub><code>material-icons: currency_bitcoin</code></sub>
-
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| BlocklistProject Crypto | `https://raw.githubusercontent.com/blocklistproject/Lists/master/crypto.txt` | crypto, suspicious | Targets crypto-related abuse such as malicious mining and scammy crypto services. | The Blocklist Project | Active (2025) | 8/10 | — | Can interfere with some legitimate exchanges/wallets. Consider assigning to a specific “high-risk” or “untrusted devices” group. |
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| **StevenBlack Unified Hosts** | [link](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts) | ads, malware, suspicious, tracking | Long-standing unified list combining several reputable sources with deduplication. | Steven Black | Very active (Release: Nov 2025) | **10/10** | ~110k | Excellent stability & low breakage. Ideal baseline for most networks. |
+| **Hagezi Multi Normal** | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/multi.txt) | ads, malware, phishing, suspicious, telemetry, tracking | Balanced, well-tuned multipurpose blocklist. | Hagezi | Active 2025 | **10/10** | ~267k | Great all-in-one list; frequently updated; Pi-hole compatible. |
+| **OISD Small** | [link](https://small.oisd.nl) | ads, malware, tracking, telemetry | Lightweight curated list optimized for high stability. | OISD (sjhgvr) | Active 2025 | **10/10** | ~71k | Minimal breakage; excellent for home, education, corporate networks. |
 
 ---
 
-## 🦠 Malware  
-<sub><code>material-icons: bug_report</code></sub>
+# 📢 Ads
 
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| BlocklistProject Malware | `https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt` | malware | Focused malware domain list from several threat sources, tuned for DNS blocking. | The Blocklist Project | Active (2025) | 9/10 | — | Strong general malware layer; good default security list with relatively low false-positive rate. |
-| RPiList Malware | `https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware` | malware | German-maintained list blocking domains known to distribute malware. | RPiList / SemperVideo | Active (2025) | 8/10 | — | Good complement to other malware feeds; may be somewhat aggressive on “shady” download sites. |
-| ThreatFox Hostfile | `https://threatfox.abuse.ch/downloads/hostfile/` | malware, phishing, suspicious | Hostfile of domain-based IOCs (C2, payload delivery, malware infra) from ThreatFox (abuse.ch). | abuse.ch (ThreatFox) | Rolling 6-month window | 9/10 | — | High-quality threat-intel feed. Excellent for security-focused networks; occasional FPs on newly-compromised but later-cleaned domains. |
-| URLHaus Hostfile | `https://urlhaus.abuse.ch/downloads/hostfile/` | malware, phishing, suspicious | Hostfile of domains used to distribute malware URLs reported to URLHaus. | abuse.ch (URLHaus) | Updated multiple times per day | 10/10 | — (backed by a DB of millions of URLs) | One of the best current malware feeds. Heavy but very high-value; consider a dedicated “high-risk” group in Pi-hole. |
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| RPiList EasyList Extended | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/easylist) | ads, tracking | DNS-converted ad/tracker list based on EasyList. | RPiList / SemperVideo | Active 2025 | 8/10 | — | Good ad blocking layer; use alongside a baseline list. |
 
 ---
 
-## 🧩 Mixed  
-<sub><code>material-icons: layers</code> – combo lists (ads + tracking + malware + more)</sub>
+# 🔞 Adult
 
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| Hagezi Multi Normal | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/multi.txt` | ads, malware, phishing, suspicious, telemetry, tracking | Balanced multi-purpose blocklist combining numerous sources; tuned for normal daily use. | Hagezi | Active (2025) | 10/10 | ~267,000 | Excellent “do-most-things” list. Use the **Adblock format**, which is Pi-hole-compatible. Great as a primary baseline. |
-| Hagezi Multi Pro | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt` | ads, malware, phishing, suspicious, telemetry, tracking | More aggressive variant of Multi Normal, blocking additional ad/tracking and shady infrastructure. | Hagezi | Active (2025) | 8/10 | ~354,000 | **Aggressive blocking—test before production.** Consider for privacy-focused devices or a separate “strict” group. |
-| OISD Big | `https://big.oisd.nl` | ads, malware, phishing, suspicious, telemetry, tracking | Large combination list aggregating many curated sources; covers ads, tracking, malware, and more. | OISD (sjhgvr) | Active (2025) | 9/10 | ~438,000 (approx.) | Very capable single “mega list”. Some reports of over-blocking; monitor logs and maintain an allowlist. |
-| OISD Small | `https://small.oisd.nl` | ads, malware, tracking, telemetry | Reduced-size OISD variant focusing on the most important domains while remaining lighter. | OISD (sjhgvr) | Active (2025) | 10/10 | ~71,000 (approx.) | **Great default for home networks.** Good balance of coverage vs. breakage; pair with dedicated malware/phishing feeds. |
-| StevenBlack Unified Hosts | `https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts` | ads, malware, suspicious, tracking | Long-standing unified hosts file aggregating several reputable sources (AdAway, MVPS, etc.) and deduplicating. | Steven Black | Very active; latest release Nov 2025 | 10/10 | ~110,000 (base unified) | Mature, widely used project. Substantial size; avoid piling on too many other “mega lists” to keep FPs and resource usage reasonable. |
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| OISD NSFW | [link](https://nsfw.oisd.nl) | adult, ads, tracking | NSFW variant of OISD for adult/porn domain filtering. | OISD (sjhgvr) | Active 2025 | 9/10 | — | Aggressive blocking; enable only where appropriate. |
 
 ---
 
-## 🎣 Phishing  
-<sub><code>material-icons: phishing</code></sub>
+# 🪙 Crypto
 
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| BlocklistProject Phishing | `https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt` | phishing | Focused phishing list (credential-stealing sites, scam login pages, etc.). | The Blocklist Project | Active (2025) | 9/10 | — | Clean, focused phishing protection; relatively low false-positive rate. Good add-on to a mixed list. |
-| Phishing Army | `https://phishing.army/download/phishing_army_blocklist.txt` | phishing | Dedicated phishing blocklist aggregating multiple feeds (e.g., PhishTank, OpenPhish). | Phishing Army (Andrea Draghetti) | Updated daily (ongoing) | 9/10 | — | Widely used for phishing protection. Excellent choice for strong anti-phishing coverage; pair with logging for rare FPs. |
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| BlocklistProject Crypto | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/crypto.txt) | crypto, suspicious | Blocks malicious mining & scammy crypto-related domains. | The Blocklist Project | Active 2025 | 8/10 | — | Can block legitimate crypto platforms; use in high-risk groups. |
 
 ---
 
-## ⚠️ Suspicious / Threat-Intel  
-<sub><code>material-icons: warning_amber</code></sub>
+# 🦠 Malware
 
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| BlocklistProject Ransomware | `https://raw.githubusercontent.com/blocklistproject/Lists/master/ransomware.txt` | malware, suspicious | Domains associated with ransomware operations (C2, payment portals, distribution). | The Blocklist Project | Active (2025) | 8/10 | — | Focused on high-risk domains. Low chance of impacting normal browsing; recommended where security is a priority. |
-| BlocklistProject Scam | `https://raw.githubusercontent.com/blocklistproject/Lists/master/scam.txt` | phishing, suspicious | Targets scam domains (tech-support scams, refund fraud, fake shops, etc.). | The Blocklist Project | Active (2025) | 8/10 | — | Useful “safety net” for non-technical users; generally minimal impact on legitimate sites. |
-| Hagezi Threat Intelligence Feeds (TIF) | `https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt` | malware, phishing, suspicious | Threat-intel-driven blocklist (TIF) for high-risk infrastructure beyond general ad/tracking. | Hagezi | Active (2025) | 9/10 | — | Strong extra-hardening layer. Best for networks where malware targeting and C2 blocking are key concerns. May be overkill for very casual home setups. |
-
----
-
-## 📡 Telemetry  
-<sub><code>material-icons: sensors</code></sub>
-
-| Name | URL | Categories | Description | Maintainer | Last Updated* | Reputation | Approx. Entries | Notes |
-|------|-----|------------|-------------|------------|---------------|-----------|-----------------|-------|
-| RPiList Win10 Telemetry | `https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Win10Telemetry` | telemetry, tracking | Focused list aimed at blocking Windows 10 telemetry and tracking endpoints/domains. | RPiList / SemperVideo | Active (2025) | 8/10 | — | Good choice if you specifically want to reduce Microsoft telemetry. Test carefully—can affect some cloud-based features. |
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| BlocklistProject Malware | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt) | malware | Malware infrastructure aggregated from multiple threat sources. | The Blocklist Project | Active 2025 | 9/10 | — | Good general malware layer. |
+| RPiList Malware | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware) | malware | Maintained malware-related blocklist used widely in EU. | RPiList / SemperVideo | Active 2025 | 8/10 | — | Good complement to threat-intel feeds. |
+| ThreatFox Hostfile | [link](https://threatfox.abuse.ch/downloads/hostfile/) | malware, phishing, suspicious | IOC-driven list of active C2, malware hosts, payload sites. | abuse.ch | Rolling 6 months | 9/10 | — | High-signal threat feed; recommended for security-focused groups. |
+| URLHaus Hostfile | [link](https://urlhaus.abuse.ch/downloads/hostfile/) | malware, phishing, suspicious | Malware-distribution domains reported by global researchers. | abuse.ch | Updated multiple times daily | **10/10** | — (backed by huge DB) | One of the most effective malware blocklists available. |
 
 ---
 
-## 🛠 Implementation Notes  
-<sub><code>material-icons: build_circle</code></sub>
+# 🧩 Mixed
 
-### Suggested Baseline for a Home / Small-Org Network
-
-1. **Pick one “mixed” baseline list:**
-   - ✅ **Hagezi Multi Normal** – or –  
-   - ✅ **OISD Small**
-
-2. **Add security-focused lists:**
-   - ✅ **URLHaus Hostfile**  
-   - ✅ **ThreatFox Hostfile**  
-   - ✅ **Phishing Army**
-
-3. **Optional hardening (per client group):**
-   - 🔐 **BlocklistProject** Malware / Phishing / Scam / Ransomware  
-   - 🔞 **OISD NSFW** (only where adult blocking is required)  
-   - 🧪 **Hagezi Multi Pro** + **Hagezi TIF** for strict / admin / lab devices  
-   - 🪟 **RPiList Win10 Telemetry** for Windows-heavy environments
-
-### Grouping Strategy (Pi-hole v6+)
-
-- Put **aggressive lists** (Hagezi Pro, TIF, OISD Big, ThreatFox, URLHaus) into their own **Pi-hole groups**.
-- Apply those groups only to:
-  - Admin endpoints
-  - Lab / testing devices
-  - High-risk user segments
-- Use **moderate lists** (e.g., OISD Small or Hagezi Multi Normal + one malware feed) for:
-  - General staff / student devices
-  - Guest Wi-Fi (with careful testing)
-
-### Monitoring & Tuning
-
-- Use Pi-hole’s **Query Log** and **Top Blocked Domains** to:
-  - Quickly spot legitimate services being blocked.
-  - Add domains to **whitelists** where appropriate.
-- For large environments, consider:
-  - Exporting query logs to a SIEM or central logging.
-  - Creating a simple **block/allow request workflow** for end-users.
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| Hagezi Multi Pro | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt) | ads, malware, phishing, suspicious, telemetry, tracking | More aggressive variant of Multi Normal. | Hagezi | Active 2025 | 8/10 | ~354k | Excellent privacy but higher FP rates; use cautiously. |
+| OISD Big | [link](https://big.oisd.nl) | ads, malware, phishing, suspicious, telemetry, tracking | Large “mega list” combining many curated sources. | OISD | Active 2025 | 9/10 | ~438k | Heavy but powerful; monitor for breakage. |
 
 ---
 
-\* **“Last Updated”** values are approximate and based on observed project activity (commits/releases) in 2024–2025.  
-Always verify current status directly from the project’s repository or homepage before relying on any list in production.
+# 🎣 Phishing
+
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| BlocklistProject Phishing | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt) | phishing | Phishing and credential-stealing domain list. | BlocklistProject | Active 2025 | 9/10 | — | Strong phishing protection. |
+| Phishing Army | [link](https://phishing.army/download/phishing_army_blocklist.txt) | phishing | Aggregates multiple phishing feeds (OpenPhish, PhishTank). | Phishing Army | Updated daily | 9/10 | — | Excellent for high-risk targets. |
+
+---
+
+# ⚠️ Suspicious / Threat-Intel
+
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| BlocklistProject Ransomware | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/ransomware.txt) | malware, suspicious | Ransomware-related domains including C2 & payment sites. | BlocklistProject | Active 2025 | 8/10 | — | Helps block severe threats; minimal breakage. |
+| BlocklistProject Scam | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/scam.txt) | phishing, suspicious | Fake shops, refund scams, tech-support scams. | BlocklistProject | Active 2025 | 8/10 | — | Good supplement for general protection. |
+| Hagezi TIF | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/tif.txt) | malware, phishing, suspicious | High-risk threat intel (C2s, hardened infra). | Hagezi | Active 2025 | 9/10 | — | Best for IT/admin or high-risk devices. |
+
+---
+
+# 📡 Telemetry
+
+| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
+|------|-----|------------|-------------|------------|---------|-----|---------|-------|
+| RPiList Win10 Telemetry | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Win10Telemetry) | telemetry, tracking | Blocks Windows telemetry & tracking endpoints. | RPiList / SemperVideo | Active 2025 | 8/10 | — | May affect Microsoft cloud services. |
+
+---
+
+# 🛠 Implementation Notes
+
+## **Recommended Setup for Most Home / Education Networks**
+
+### Choose ONE baseline:
+- ⭐ **StevenBlack Unified Hosts**  
+- ⭐ **Hagezi Multi Normal**  
+- ⭐ **OISD Small**
+
+### Add core security layers:
+- 🦠 **URLHaus Hostfile**  
+- 🕵️ **ThreatFox Hostfile**  
+- 🎣 **Phishing Army**
+
+### Optional (environment-specific):
+- 🔞 OISD NSFW  
+- 🪙 BlocklistProject Crypto  
+- 🛑 BlocklistProject Malware/Phishing/Ransomware/Scam  
+- 🔥 Hagezi Multi Pro / TIF  
+- 🪟 RPiList Win10 Telemetry  
+
+---
+
+## **Pi-hole v6+ Group Strategy (Best Practice)**
+
+- Create **separate groups** for heavy/aggressive lists:
+  - Hagezi Multi Pro  
+  - OISD Big  
+  - URLHaus  
+  - ThreatFox  
+  - Hagezi TIF  
+
+- Apply strict groups only to:
+  - IT/Admin devices  
+  - High-risk devices  
+  - Lab/testing networks  
+
+- Apply baseline + core security to:
+  - Staff devices  
+  - Student devices  
+  - Guest Wi-Fi (after testing)
+
+---
+
+## **Monitoring & Maintenance**
+
+- Review Pi-hole **Top Blocked Domains** frequently  
+- Whitelist legitimate services as needed  
+- Export logs to SIEM or dashboard for analysis  
+- Update blocklists regularly (automation recommended)
+
+---
+
+*All “Updated” values and domain counts are approximate and based on public data and active project maintenance through 2024–2025. Always verify before production deployment.*
+
