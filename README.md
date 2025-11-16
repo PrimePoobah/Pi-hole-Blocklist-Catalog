@@ -10,7 +10,7 @@
 
 ## 🎯 Why This Catalog Exists (Other Than My Poor Life Choices)
 
-Welcome, digital freedom fighter.  
+Welcome, digital freedom fighter.
 If you're here, you already know the pain: **finding good Pi-hole blocklists** is like digging through a dumpster behind a sketchy taco place.  
 Some are outdated, some are broken, and some aggressively block half the internet—including your bank, your cat's Instagram, and that one site you *claim* you don’t visit.
 
