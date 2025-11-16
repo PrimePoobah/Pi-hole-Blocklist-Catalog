@@ -141,7 +141,7 @@ This Pi-hole blocklist catalogue provides a curated, actively maintained collect
 
 ## Best All-Around (Home, School, Work)
 
-Choose ONE baseline list:
+Choose at least ONE baseline list:
 - StevenBlack Unified
 - Hagezi Multi Normal
 - OISD Small
