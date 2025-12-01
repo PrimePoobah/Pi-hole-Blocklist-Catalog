@@ -26,6 +26,7 @@ This Pi-hole blocklist catalogue provides a curated, actively maintained collect
 - [Telemetry & Privacy Blocklists](#telemetry--privacy-blocklists)
 - [CNAME Cloaking & Tracking Lists](#cname-cloaking--tracking-lists)
 - [Recommended Pi-hole Configurations](#recommended-pi-hole-configurations)
+- [Removed This Month](#removed-this-month)
 
 ---
 
@@ -183,6 +184,17 @@ Apply only to:
 
 ---
 
-  _This catalogue is fully updated and verified as of December 2025 for Pi-hole v6+ compatibility._
+# 🗑️ Removed This Month
 
-  _Over 2,000,000 sites are blocked if using all the lists above_
+These sources were removed from the catalog **in December 2025** due to deprecation, staleness, or reliability/quality concerns.
+
+| Name | URL | Categories | Why Removed | Suggested Replacement |
+|------|-----|------------|------------|------------------------|
+| Disconnect Simple Ads | https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt | ads | Deprecated / no longer recommended for modern Pi-hole deployments. | AdAway Hosts, OISD Small, Hagezi Multi Normal |
+| Disconnect Malvertising | https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt | malvertising | Deprecated / no longer recommended for modern Pi-hole deployments. | URLHaus Hostfile, ThreatFox Hostfile |
+
+---
+
+_This catalogue is fully updated and verified as of December 2025 for Pi-hole v6+ compatibility._
+
+_Over 2,000,000 sites are blocked if using all the lists above_
