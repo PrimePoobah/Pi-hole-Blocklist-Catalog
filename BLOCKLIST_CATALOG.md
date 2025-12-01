@@ -1,6 +1,6 @@
 <!-- BLOCKLIST_CATALOG.md -->
 
-# 🛡️ Pi-hole Blocklist Catalogue (November 2025 Edition)
+# 🛡️ Pi-hole Blocklist Catalogue (December 2025 Edition)
 ## High-Quality, Actively Maintained DNS Blocklists for Pi-hole v6+
 
 This Pi-hole blocklist catalogue provides a curated, actively maintained set of DNS blocklists for blocking ads, trackers, telemetry, malware, phishing, cryptomining, and suspicious domains. All blocklists listed here are:
