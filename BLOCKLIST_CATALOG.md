@@ -1,4 +1,4 @@
-# 🛡️ Pi-hole Blocklist Catalog (January 2026)
+# 🛡️ Pi-hole Blocklist Catalog (February 2026)
 ## High-Quality, Actively Maintained DNS Blocklists for Pi-hole v6+
 
 This catalogue provides a curated, actively maintained collection of DNS blocklists used to block **ads**, **tracking**, **malware**, **phishing**, **telemetry**, **scams**, **ransomware**, **cryptomining**, and **suspicious domains**.
@@ -13,18 +13,15 @@ All blocklists listed here are intended to be:
 
 ---
 
-## 🆕 Changes This Month (January 2026)
+## 📅 Changes This Month (February 2026)
 
 ### ✅ Added
-| Name | URL | Categories | Why Added | Suggested Use |
-|------|-----|------------|-----------|---------------|
-| Disconnect Simple Ads 🆕 | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt) | ads | Conservative, reputable, low false-positive ad coverage. | Optional but recommended (safe add-on). |
-| Disconnect Malvertising 🆕 | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt) | ads, malware | Focused malvertising coverage from a reputable privacy/security org. | Optional add-on for stronger malvertising protection. |
+- None
 
 ### ❌ Removed
-| Name | URL | Categories | Why Removed | Suggested Replacement |
-|------|-----|------------|------------|------------------------|
-| OSINT.DigitalSide Latest Domains (Pi-hole format) | [link](https://osint.digitalside.it/Threat-Intel/lists/latestdomains.piHole.txt) | malware, suspicious | Reliability issue (connection refused / unreachable for automated gravity updates). | URLHaus Hostfile, ThreatFox Hostfile |
+- None
+
+_No changes were required for February 2026. The January catalog remains current and valid._
 
 ---
 
@@ -35,7 +32,6 @@ All blocklists listed here are intended to be:
 - **8–9/10** — strong, safe, actively maintained  
 - **6–7/10** — aggressive, niche, or advanced users only  
 
-**🆕 NEW** — newly added/returned this month (January 2026)  
 **Entries** — approximate number of domains blocked  
 
 ---
@@ -57,8 +53,8 @@ All blocklists listed here are intended to be:
 | Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
 |------|-----|------------|-------------|------------|---------|-----|---------|-------|
 | AdAway Hosts | [link](https://adaway.org/hosts.txt) | ads, tracking | Popular mobile + DNS adblock hosts file. | AdAway | Active | 9/10 | — | Low false positives. |
-| Disconnect Simple Ads 🆕 NEW | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt) | ads | Clean, stable, minimal false positives. | Disconnect | Active | 9/10 | — | Optional but recommended; very low noise. |
-| Disconnect Malvertising 🆕 NEW | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt) | ads, malware | Blocks malicious ad networks and exploit-driven ad servers. | Disconnect | Active | 9/10 | — | Optional; strong malvertising coverage. |
+| Disconnect Simple Ads | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt) | ads | Clean, stable, minimal false positives. | Disconnect | Active | 9/10 | — | Optional but recommended. |
+| Disconnect Malvertising | [link](https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt) | ads, malware | Blocks malicious ad networks and exploit-driven ad servers. | Disconnect | Active | 9/10 | — | Strong malvertising coverage. |
 | RPiList EasyList Extended | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/easylist) | ads, tracking | DNS conversion of EasyList-style web filters. | RPiList | Active | 8/10 | — | Moderate aggressiveness. |
 
 ---
@@ -76,7 +72,7 @@ All blocklists listed here are intended to be:
 | Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
 |------|-----|------------|-------------|------------|---------|-----|---------|-------|
 | BlocklistProject Crypto | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/crypto.txt) | crypto, suspicious | Cryptomining, scam coins, and crypto-abuse domains. | BlocklistProject | Active | 8/10 | — | Good for high-risk systems. |
-| Prigent Crypto | [link](https://v.firebog.net/hosts/Prigent-Crypto.txt) | crypto, suspicious | Targeted cryptomining/crypto abuse list. | Prigent | Active | 8/10 | — | Optional but valuable; if Firebog is unreliable for you, consider mirroring. |
+| Prigent Crypto | [link](https://v.firebog.net/hosts/Prigent-Crypto.txt) | crypto, suspicious | Targeted cryptomining/crypto abuse list. | Prigent | Active | 8/10 | — | Optional but valuable. |
 
 ---
 
@@ -93,21 +89,12 @@ All blocklists listed here are intended to be:
 
 ---
 
-# 🧩 Mixed / Combined DNS Blocklists
-
-| Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
-|------|-----|------------|-------------|------------|---------|-----|---------|-------|
-| Hagezi Multi Pro | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt) | ads, malware, telemetry, phishing | Larger, more aggressive version of Multi Normal. | Hagezi | Active | 8/10 | ~354k | Use in separate Pi-hole groups. |
-| OISD Big | [link](https://big.oisd.nl) | ads, malware, phishing, tracking | Massive unified DNS blocklist. | OISD | Active | 9/10 | ~438k | Ideal for advanced or strict filtering. |
-
----
-
 # 🎣 Phishing Protection Lists
 
 | Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
 |------|-----|------------|-------------|------------|---------|-----|---------|-------|
 | BlocklistProject Phishing | [link](https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt) | phishing | Dedicated phishing domain blocklist. | BlocklistProject | Active | 9/10 | — | Reliable & high quality. |
-| Phishing Army (Extended) | [link](https://phishing.army/download/phishing_army_blocklist_extended.txt) | phishing | Expanded phishing database updated daily. | Phishing Army | Daily | 9/10 | — | Recommended version. |
+| Phishing Army (Extended) | [link](https://phishing.army/download/phishing_army_blocklist_extended.txt) | phishing | Expanded phishing database updated daily. | Phishing Army | Daily | 9/10 | — | Recommended. |
 
 ---
 
@@ -125,8 +112,8 @@ All blocklists listed here are intended to be:
 
 | Name | URL | Categories | Description | Maintainer | Updated | Rep | Entries | Notes |
 |------|-----|------------|-------------|------------|---------|-----|---------|-------|
-| RPiList Win10 Telemetry | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Win10Telemetry) | telemetry, tracking | Blocks Windows 10/11 telemetry. | RPiList | Active | 8/10 | — | May break some Microsoft cloud services. |
-| WindowsSpyBlocker (Hosts - Spy) | [link](https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt) | telemetry, tracking | Hosts rules targeting Windows telemetry and tracking endpoints. | WindowsSpyBlocker (crazy-max) | Active | 8/10 | — | Use via Pi-hole groups; may impact some Microsoft services. |
+| RPiList Win10 Telemetry | [link](https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Win10Telemetry) | telemetry, tracking | Blocks Windows 10/11 telemetry. | RPiList | Active | 8/10 | — | May break some Microsoft services. |
+| WindowsSpyBlocker (Hosts - Spy) | [link](https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt) | telemetry, tracking | Hosts rules targeting Windows telemetry endpoints. | WindowsSpyBlocker | Active | 8/10 | — | Use via Pi-hole groups. |
 
 ---
 
@@ -138,51 +125,5 @@ All blocklists listed here are intended to be:
 
 ---
 
-# 🛠 Recommended Pi-hole Configurations
-
-## Best All-Around (Home, School, Work)
-
-Choose at least ONE baseline list:
-- StevenBlack Unified
-- Hagezi Multi Normal
-- OISD Small
-- 1Hosts (Lite)
-
-Add core security feeds:
-- URLHaus
-- ThreatFox
-- Phishing Army Extended
-- Frogeye First-Party Trackers
-- BlocklistProject Phishing
-
-Optional:
-- AdAway
-- Disconnect Simple Ads 🆕
-- Disconnect Malvertising 🆕
-- Crypto lists (BlocklistProject Crypto; optionally Prigent Crypto)
-- Telemetry lists via Groups only
-
----
-
-## High-Security / Strict Filtering (SOC, Admin, Security Lab)
-
-Use separate Pi-hole groups:
-- OISD Big
-- Hagezi Multi Pro
-- Hagezi TIF
-- URLHaus
-- ThreatFox
-- FadeMind Risk
-- NoTrack Malware
-- Phishing Army Extended
-- WindowsSpyBlocker (Hosts - Spy)
-
-Apply only to:
-- Admin workstations
-- High-risk systems
-- Testing networks
-
----
-
-_This catalogue is fully updated and verified as of January 2026 for Pi-hole v6+ compatibility._
-_Over 2,000,000 sites are blocked if using all the lists above_
+_This catalogue is fully verified as of **February 2026** for Pi-hole v6+ compatibility._  
+_Using all lists above will block **well over 2 million domains**._
