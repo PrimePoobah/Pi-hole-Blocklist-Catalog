@@ -1,0 +1,46 @@
+name: Blocklist Healthcheck
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Every Monday at 06:15 UTC (01:15 America/Toronto standard time)
+    - cron: "15 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run blocklist healthcheck
+        run: |
+          python scripts/blocklist_healthcheck.py \
+            --catalog BLOCKLIST_CATALOG.md \
+            --out-md healthcheck-report.md \
+            --out-json healthcheck-report.json \
+            --timeout 12 \
+            --max-redirects 5 \
+            --fail-on-down
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: blocklist-healthcheck
+          path: |
+            healthcheck-report.md
+            healthcheck-report.json
