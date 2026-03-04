@@ -19,7 +19,7 @@ All blocklists listed here are intended to be:
 
 | Name | URL | Categories | Why Added | Suggested Use |
 |-----|-----|------------|-----------|---------------|
-| 1Hosts Pro 🆕 | [link](https://badmojr.github.io/1Hosts/Pro/domains.txt) | ads, tracking, malware | Expanded version of the popular 1Hosts list with broader coverage. | Advanced users wanting deeper filtering |
+| 1Hosts Pro 🆕 | [link](https://github.com/badmojr/1Hosts/releases/download/latest/1hosts-Xtra_domains.txt) | ads, tracking, malware | Expanded version of the popular 1Hosts list with broader coverage. | Advanced users wanting deeper filtering |
 | HaGeZi Ultimate 🆕 | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/ultimate.txt) | ads, malware, phishing | Extremely aggressive DNS blocklist maintained by HaGeZi. | Strict filtering environments |
 
 ### ❌ Removed
@@ -99,7 +99,7 @@ None
 |------|-----|------------|-------------|------------|---------|-----|---------|-------|
 | Hagezi Multi Pro | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.txt) | ads, malware | Larger version of Multi Normal list. | HaGeZi | Active | 8/10 | ~380k | Advanced |
 | OISD Big | [link](https://big.oisd.nl) | ads, malware, phishing | Massive combined DNS blocklist. | OISD | Active | 9/10 | ~455k | Very aggressive |
-| 1Hosts Pro 🆕 | [link](https://badmojr.github.io/1Hosts/Pro/domains.txt) | ads, tracking, malware | Expanded version of the 1Hosts blocklist. | 1Hosts | Active | 9/10 | ~180k | Advanced filtering |
+| 1Hosts Pro 🆕 | [link](https://github.com/badmojr/1Hosts/releases/download/latest/1hosts-Xtra_domains.txt) | ads, tracking, malware | Expanded version of the 1Hosts blocklist. | 1Hosts | Active | 9/10 | ~180k | Advanced filtering |
 | Hagezi Ultimate 🆕 | [link](https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/ultimate.txt) | ads, malware, phishing | Most aggressive HaGeZi DNS blocklist. | HaGeZi | Active | 9/10 | ~650k | Strict environments |
 
 ---
