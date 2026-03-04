@@ -2,6 +2,8 @@
 
 # Pi-hole Blocklist Catalog
 
+[![Blocklist Healthcheck](https://github.com/PrimePoobah/Pi-hole-Blocklist-Catalog/actions/workflows/blocklist-health.yml/badge.svg)](https://github.com/PrimePoobah/Pi-hole-Blocklist-Catalog/actions/workflows/blocklist-health.yml)
+
 ![GitHub stars](https://img.shields.io/github/stars/PrimePoobah/Pi-hole-Blocklist-Catalog?style=flat-square)
 ![Last Updated](https://img.shields.io/github/last-commit/PrimePoobah/Pi-hole-Blocklist-Catalog?label=updated&style=flat-square)
 ![License](https://img.shields.io/badge/License-AGPL--3.0-orange?style=flat-square)
