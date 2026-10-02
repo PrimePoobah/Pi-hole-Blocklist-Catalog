@@ -8,6 +8,7 @@
 ![License](https://img.shields.io/badge/License-AGPL--3.0-orange?style=flat-square)
 ![Pi-hole v6 Compatible](https://img.shields.io/badge/Pi--hole-v6%20Compatible-brightgreen?style=flat-square)
 ![Curated Monthly](https://img.shields.io/badge/Curated-Monthly-blue?style=flat-square)
+![Current Catalog](https://img.shields.io/badge/Catalog-October%202026-2ea44f?style=flat-square)
 
 ---
 
@@ -48,11 +49,13 @@ This catalog is **not**:
 
 Looking for the actual list? Boom:
 
-➡️ **[BLOCKLIST_CATALOG.md](./BLOCKLIST_CATALOG.md)**
+➡️ **[BLOCKLIST_CATALOG.md](./BLOCKLIST_CATALOG.md)**  
+**Current monthly review:** October 2026
 
 Inside you’ll find:
 
 - ✔ Validated for Pi-hole v6 compatibility, reachability, and recent maintenance signals  
+- ✔ Domain / rule counts refreshed during the monthly review  
 - ✔ Proper categories (ads, trackers, telemetry, malware, and other internet gremlins)  
 - ✔ Descriptions, reputation scores, and notes on false positives  
 - ✔ Suggested use-cases (home, lab, SOC, admin devices, etc.)
@@ -63,15 +66,21 @@ If you just want a quick starting point for a **home Pi-hole**:
    - `StevenBlack Unified Hosts` **or**  
    - `Hagezi Multi Normal` **or**  
    - `OISD Small` **or**  
-   - `1Hosts (Lite)`
+   - `1Hosts Lite`
 
 2. Add a **malware/phishing layer**:
    - `URLHaus Hostfile`  
    - `ThreatFox Hostfile`  
+   - `Hagezi TIF` if you want a much broader threat-intelligence layer  
    - Optionally one of the more aggressive lists if you like living dangerously
 
 3. If you’re on Windows-heavy networks and enjoy telemetry-free vibes:
-   - Consider the **telemetry lists** (in their own section) **via Pi-hole groups only**.
+   - Consider `HaGeZi Windows/Office Tracker` **via a dedicated Pi-hole group**.
+
+4. If you want to take a swing at ad-block recovery systems:
+   - `HaGeZi Ad-Shield` can help, but it is **aggressive** and may break affected sites. Test it in a dedicated group first.
+
+> **October 2026 note:** the legacy Disconnect Simple Ads and Disconnect Malvertising lists are no longer included in the catalog because they do not meet the project’s current maintenance/freshness standard.
 
 ---
 
@@ -91,6 +100,8 @@ Each entry in the catalog includes:
 - URL  
 - Category  
 - Maintainer  
+- Last-updated / freshness signal  
+- Domain or rule count  
 - Approximate reputation score  
 - Notes about aggressiveness, best use-cases, and gotchas  
 
@@ -113,7 +124,9 @@ It’s… less great for:
 Use **Pi-hole groups**:
 
 - Keep a sane baseline for everyone  
+- Don’t stack multiple giant baseline lists just because your Pi-hole has RAM to spare  
 - Assign aggressive malware/telemetry lists only to the devices that need them  
+- Put experimental or high-breakage lists such as `HaGeZi Ad-Shield` in dedicated groups first  
 - Whitelist sparingly and intentionally  
 
 ---
